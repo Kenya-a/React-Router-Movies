@@ -6,7 +6,7 @@ const Movie = (props) => {
  
   useEffect(() => {
     const id = props.match.params.id
-    const movie = movie.find(movie => `${movie.id}` === id);
+    const movieType = movieType.find(movieType => `${movieType.id}` === id);
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
@@ -53,6 +53,7 @@ const Movie = (props) => {
       <div className="save-button">Save</div>
     </div>
   );
+  
 }
 
 export default Movie;
