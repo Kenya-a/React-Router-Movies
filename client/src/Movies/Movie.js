@@ -6,7 +6,7 @@ const Movie = (props) => {
  
   useEffect(() => {
     const id = props.match.params.id
-    const movieType = movieType.find(movieType => `${movieType.id}` === id);
+    // const movies = movies.find(movies => `${movies.id}` === id);
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
@@ -26,7 +26,7 @@ const Movie = (props) => {
   //   const addToSavedList = props.addToSavedList;
   //   addToSavedList(movie)
   // }
-
+  console.log('Movie',movie)
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
@@ -44,7 +44,7 @@ const Movie = (props) => {
         </div>
         <h3>Actors</h3>
 
-        {stars.map(star => (
+        {stars && stars.map(star => (
           <div key={star} className="movie-star">
             {star}
           </div>
